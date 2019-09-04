@@ -1,8 +1,8 @@
 /* 
 #####################################
-### AUTHOR : RITIK JAIN		        ###
-### ENROLMENT NUMBER : 18114068	  ###
-### BTECH. CSE : O3	              ###
+### AUTHOR : RITIK JAIN		     ###
+### ENROLMENT NUMBER : 18114068 ###
+### BTECH. CSE : O3	           ###
 #####################################
 */
 
