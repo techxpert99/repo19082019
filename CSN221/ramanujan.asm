@@ -12,6 +12,7 @@
 ############################################################################
 /*
 
+/*
 #############################
 ### Start of main function  #
 #############################
@@ -25,7 +26,7 @@
 mov r6,1
 
 /* Loop to find the smallest ramanujan */
-.loop :
+.loop0 :
 
 /* Calling to check whether or not N is ramanujan. Result is stored in r0 */
 call .ramanujan
@@ -36,7 +37,7 @@ beq end
 
 /* If not : N++ ; repeat the loop */
 add r6,1
-b loop
+b loop0
 
 /*
 #############################
