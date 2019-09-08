@@ -36,7 +36,7 @@ cmp r0,1
 beq end
 
 /* If not : N++ ; repeat the loop */
-add r6,1
+add r6,r6,1
 b loop0
 
 /*
@@ -74,7 +74,7 @@ mov r2,1
 
 /* If a pair of cubes with sum = N is detected  , the solution counter (c) is incremented by 1 */
 .loop2eq :
-add r5,1
+add r5,r5,1
 
 /* The inner loop Loop 2 */
 .loop2 :
@@ -92,13 +92,13 @@ mul r4,r2,r2
 mul r4,r4,r2
 
 /* Assign : tmp1 = tmp1 + tmp2 = i*i*i + j*j*j */
-add r3,r4
+add r3,r3,r4
 
 /* Compare N and tmp1 = i^3 + j^3 */
 cmp r0,r3
 
 /* Increment j [ inner-loop iterator ] : j++ */
-add r2,1
+add r2,r2,1
 
 /* If N = tmp1 goto loop2eq [ to increment solution counter (c) ] and restart the inner loop*/
 beq loop2eq
@@ -108,7 +108,7 @@ b loop2
 
 /* End label of inner loop ; increments i : i++ ; and restarts the outer loop */
 .loop2end :
-add r1,1
+add r1,r1,1
 b loop1
 
 /* End label of outer loop ; Compares c and 1 ; If c > 1 Then the number is Ramanujan */
