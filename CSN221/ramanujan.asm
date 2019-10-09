@@ -33,11 +33,11 @@ call .ramanujan
 
 /* If N is ramanujan goto end */
 cmp r0,1
-beq end
+beq .end
 
 /* If not : N++ ; repeat the loop */
 add r6,r6,1
-b loop0
+b .loop0
 
 /*
 #############################
@@ -67,7 +67,7 @@ mov r3,0
 
 /* Compare i and N . If i > N break the loop and jump to loopend */
 cmp r1,r0
-bgt loop1end
+bgt .loop1end
 
 /* Initialize : j=1 */
 mov r2,1
@@ -81,7 +81,7 @@ add r5,r5,1
 
 /* Compare i and N . If i > N break the loop and jump to loop2end */
 cmp r2,r0
-bgt loop2end
+bgt .loop2end
 
 /* Declare : tmp1 = i*i*i */
 mul r3,r1,r1
@@ -101,10 +101,10 @@ cmp r0,r3
 add r2,r2,1
 
 /* If N = tmp1 goto loop2eq [ to increment solution counter (c) ] and restart the inner loop*/
-beq loop2eq
+beq .loop2eq
 
 /* Else restart the inner loop without incrementing c */
-b loop2
+b .loop2
 
 /* End label of inner loop ; increments i : i++ ; and restarts the outer loop */
 .loop2end :
